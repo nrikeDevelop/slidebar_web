@@ -1,11 +1,26 @@
+window.onload = function(evt) {	
+	init(evt);	
+}	
 
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+function init(evt) {
+	evt.preventDefault();
+	var flechaDerecha = document.getElementsByClassName("w3-display-left");
+	flechaDerecha.onclick = plusDivs(evt, 1);
+	//var elements = document.getElementsByClassName("w3-display-left");
+
 }
 
+/*
+var slideIndex = 1;
+showDivs(slideIndex);
+*/
+function plusDivs(n) {
+  //showDivs(slideIndex += n); 
+  
+  console.log("se ha pulsado el boton "+ n);
+}
+/*
 function showDivs(n) {
   var i;
   var x = document.getElementsByClassName("mySlides");
@@ -15,4 +30,4 @@ function showDivs(n) {
      x[i].style.display = "none";  
   }
   x[slideIndex-1].style.display = "block";  
-}
+}*/
