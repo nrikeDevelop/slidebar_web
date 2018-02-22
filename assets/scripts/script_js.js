@@ -1,10 +1,7 @@
-
 window.onload = function(e) {
 	init();
 
 /*
-	var slideIndex = 1;
-
 	showDivs(slideIndex);
 
 	function plusDivs(n) {
