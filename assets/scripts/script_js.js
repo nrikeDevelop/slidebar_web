@@ -2,24 +2,29 @@ window.onload = function(evt) {
 	init(evt);	
 }	
 
+//Creamos variable global que utilizaremnos como contador
+var count = 1;
 
-function init(evt) {
-	evt.preventDefault();
-	var flechaDerecha = document.getElementsByClassName("w3-display-left");
-	flechaDerecha.onclick = plusDivs(evt, 1);
-	//var elements = document.getElementsByClassName("w3-display-left");
-
+function init(event) {
+	event.preventDefault();
+	//cargamos en variables las flechas del slider
+	var flechaDerecha = document.getElementsByClassName("w3-display-left");	
+	var flechaIzquierda = document.getElementsByClassName("w3-display-rigth");
+	//Incluimos eventos del tipo clic en las flechas del slider
+	flechaDerecha.onclick = plusDivs;
+	flechaIzquierda.onclick = minusDivs;
 }
 
-/*
-var slideIndex = 1;
-showDivs(slideIndex);
-*/
-function plusDivs(n) {
-  //showDivs(slideIndex += n); 
-  
-  console.log("se ha pulsado el boton "+ n);
+function plusDivs(event) {
+	event.preventDefault();
+	//Aqui sumaremos +1 al contador y lo enviaremos a la función show Divs
 }
+
+function minusDivs(event) {
+	event.preventDefault();
+	//Aquí restaremos -1 y lo enviaremos a la funcion showDivs
+}
+
 /*
 function showDivs(n) {
   var i;
