@@ -1,8 +1,5 @@
-
-img {
+.img-slider {
 	width: 100%;
     display: block;
-    vertical-align: middle;
-    border-style: none;
-}
+}    
 
