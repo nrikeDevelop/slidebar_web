@@ -4,6 +4,8 @@ window.onload = function(event) {
 
 var count = 1;
 
+var limit = document.getElementsByClassName("mySlides").length;
+
 function init(event) {
 	event.preventDefault();	
 	document.getElementById("arrowleft").addEventListener("click",previusPicture);	
@@ -13,24 +15,30 @@ function init(event) {
 
 function nextPicture(event) {
 	event.preventDefault();
-	showPictures(count+=1);
-	console.log("count = "+count);	
+	if(count >= limit) {
+		count = 1;
+	}else {
+		count +=1;
+	}
+	showPictures(count);		
 }
 
 function previusPicture(event) {
 	event.preventDefault();
-	showPictures(count-=1);
-	console.log("Count = "+count);	
+	count-=1;
+	if (count == 0) {  		
+  		count = limit;
+  	}else {
+  		count = Math.abs(count);  		
+  	}
+	showPictures(count);	
 }
 
 
-function showPictures(count) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  if (count > x.length) {count = 1}    
-  if (count < 1) {count = x.length}
-  for (i = 0; i < x.length; i++) {
+function showPictures(count) { 
+  var x = document.getElementsByClassName("mySlides");  
+  for (var i = 0; i < x.length; i++) {
      x[i].style.display = "none";  
   }
-  x[count-1].style.display = "block";  
+  x[count-1].style.display = "block";
 }
